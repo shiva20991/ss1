@@ -77,6 +77,10 @@ async def ddl_call_back(bot, update):
     tmp_directory_for_each_user = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id)
     if not os.path.isdir(tmp_directory_for_each_user):
         os.makedirs(tmp_directory_for_each_user)
+    if custom_file_name.startswith('www'):
+        custom_file_name = ' '.join(custom_file_name.split()[1:])
+        custom_file_name = custom_file_name
+        
     download_directory = tmp_directory_for_each_user + "/" + custom_file_name
     command_to_exec = []
     async with aiohttp.ClientSession() as session:
