@@ -37,6 +37,11 @@ async def ddl_call_back(bot, update):
         "/" + str(update.from_user.id) + ".jpg"
     youtube_dl_url = update.message.reply_to_message.text
     custom_file_name = os.path.basename(youtube_dl_url)
+    
+    if custom_file_name.startswith('www'):
+        custom_file_name = ' '.join(custom_file_name.split()[1:])
+        custom_file_name = custom_file_name
+        
     if "|" in youtube_dl_url:
         url_parts = youtube_dl_url.split("|")
         if len(url_parts) == 2:
@@ -82,7 +87,6 @@ async def ddl_call_back(bot, update):
         custom_file_name = custom_file_name
         
     download_directory = tmp_directory_for_each_user + "/" + custom_file_name
-    logger.info(download_directory)
     command_to_exec = []
     async with aiohttp.ClientSession() as session:
         c_time = time.time()
