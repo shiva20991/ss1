@@ -45,7 +45,7 @@ async def youtube_dl_call_back(bot, update):
         )
         return False
     youtube_dl_url = update.message.reply_to_message.text
-    custom_file_name = str(response_json.get("title"))[:50] + \
+    custom_file_name = str(response_json.get("title"))[:150] + \
         "_" + youtube_dl_format + "." + youtube_dl_ext
     youtube_dl_username = None
     youtube_dl_password = None
@@ -95,7 +95,7 @@ async def youtube_dl_call_back(bot, update):
     mention = user["mention"]
     description = Translation.CUSTOM_CAPTION_UL_FILE.format(mention)
     if "fulltitle" in response_json:
-        description = response_json["fulltitle"][0:1021]
+        description = response_json["fulltitle"][2:1021]
         # escape Markdown and special characters
     tmp_directory_for_each_user = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id)
     if not os.path.isdir(tmp_directory_for_each_user):
@@ -108,7 +108,7 @@ async def youtube_dl_call_back(bot, update):
         file_name = custom_file_name
         if custom_file_name.startswith('www'):
             custom_file_name = ' '.join(custom_file_name.split()[1:])
-            file_name  = custom_file_name
+            file_name  = '@trvpn' + custom_file_name
         
     download_directory = tmp_directory_for_each_user + "/" + str(file_name)
     command_to_exec = []
