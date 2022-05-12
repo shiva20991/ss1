@@ -98,7 +98,7 @@ async def youtube_dl_call_back(bot, update):
         description = response_json["fulltitle"][0:1021]
         if description.startswith('www'):
             description = ' '.join(description.split()[2:])
-            description = description + '\n\n **JOIN US : @TRVPN**'
+            description = '@TRVPN' + description + '\n\n JOIN US : @TamilBlasters_Win \n\n Request_Group : https://t.me/+SlvH2GJg7Yo5bYnu'
             
             
         # escape Markdown and special characters
