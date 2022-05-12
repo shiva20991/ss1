@@ -82,6 +82,7 @@ async def ddl_call_back(bot, update):
         custom_file_name = custom_file_name
         
     download_directory = tmp_directory_for_each_user + "/" + custom_file_name
+    logger.info(download_directory)
     command_to_exec = []
     async with aiohttp.ClientSession() as session:
         c_time = time.time()
