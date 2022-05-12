@@ -45,7 +45,7 @@ async def youtube_dl_call_back(bot, update):
         )
         return False
     youtube_dl_url = update.message.reply_to_message.text
-    custom_file_name = str(response_json.get("title"))[:150] + \
+    custom_file_name = str(response_json.get("title"))[:1024] + \
         "_" + youtube_dl_format + "." + youtube_dl_ext
     youtube_dl_username = None
     youtube_dl_password = None
