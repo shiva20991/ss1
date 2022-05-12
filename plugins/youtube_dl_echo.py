@@ -58,7 +58,7 @@ async def echo(bot, update):
             if custom_file_name.startswith('www'):
                 custom_file_name = ' '.join(custom_file_name.split()[1:])
                 custom_file_name = custom_file_name
-                file_name = custom_file_name 
+                file_name  = '@trvpn ' + custom_file_name 
         # https://stackoverflow.com/a/761825/4723940
         if youtube_dl_username is not None:
             youtube_dl_username = youtube_dl_username.strip()
