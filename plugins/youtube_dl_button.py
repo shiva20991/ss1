@@ -98,6 +98,8 @@ async def youtube_dl_call_back(bot, update):
         description = response_json["fulltitle"][0:1021]
         if description.startswith('www'):
             description = ' '.join(description.split()[2:])
+            description = description + '\n\n **JOIN US : @TRVPN**'
+            
             
         # escape Markdown and special characters
     tmp_directory_for_each_user = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id)
