@@ -106,6 +106,10 @@ async def youtube_dl_call_back(bot, update):
         file_name = ' '.join(file_maix)
     else:
         file_name = custom_file_name
+        if custom_file_name.startswith('www'):
+            custom_file_name = ' '.join(custom_file_name.split()[1:])
+            file_name  = custom_file_name
+        
     download_directory = tmp_directory_for_each_user + "/" + str(file_name)
     command_to_exec = []
     if tg_send_type == "audio":
