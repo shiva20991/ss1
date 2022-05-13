@@ -2,9 +2,9 @@
   "name": "Up",
   "description": "Telegram Bot to Upload URLs to Telegram as File and Video.",
   "keywords": [ "URL UPLOADER"],
-  "success_url": "https://t.me/Uploader_X_bot",
-  "website": "https://github.com/shiva20991/UPLOADER-BOT",
-  "repository": "https://github.com/shiva20991/UPLOADER-BOT",
+  "success_url": "https://github.com/shiva20991/ss1",
+  "website": "https://github.com/shiva20991/ss1",
+  "repository": "https://github.com/shiva20991/ss1",
 
   "env": {
     "WEBHOOK": {"description": "Setting this to ANYTHING will enable webhooks when in env mode",
